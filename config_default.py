@@ -7,14 +7,14 @@ configs = {
         'database':'jblog'
     }, 
     'session':{
-        'secret':'fanfubuaa'    
+        'secret':'buaaopt'    
     },
     'review':{
-        'domain':'fanfubuaa.sinaapp.com',
+        'domain':'buaaopt.sinaapp.com',
         'url':'http://v2.uyan.cc/code/uyan.js?uid=2029306'
         },
     'storage':{
-        'bucket':'fanfubuaa'
+        'bucket':'buaaopt'
         }
         
 }
