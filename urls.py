@@ -77,6 +77,17 @@ def tag_blogs(tag_id):
     blogs = render_blogs(blogs)
     user = ctx.request.user
     return dict(blogs=blogs,user=user)
+	
+@view('content.html')
+@get('/member')
+def tag_blogs(tag_id):
+    tag = Tag.get("0014492489683911edee3f3727244eab87c990dd5926a75000")
+    if not tag:
+        raise notfound()
+    blogs = get_blogs_from_tag(tag)
+    blogs = render_blogs(blogs)
+    user = ctx.request.user
+    return dict(blogs=blogs,user=user)
 
 @view('signin.html')
 @get('/signin')
