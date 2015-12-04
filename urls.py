@@ -57,15 +57,27 @@ def render_blogs(blogs):
             blog.tag = Tag(name=u"未分类")
     return blogs
 
-
 @view('content.html')
 @get('/')
+def begin():
+    tag = Tag.get("0014492489683609f9351c69eaa4c9c8bf725b25e155ded000")
+    if not tag:
+        raise notfound()
+    blogs = get_blogs_from_tag(tag)
+    blogs = render_blogs(blogs)
+    user = ctx.request.user
+    return dict(blogs=blogs,user=user)
+	
+@view('content.html')
+@get('/all')
 def all_blogs():
     blogs = Blog.find_all()
     blogs = sorted(blogs,key=lambda blog:blog.created_at,reverse=True)
     blogs = render_blogs(blogs)
     user = ctx.request.user
     return dict(blogs=blogs,user=user)
+	
+
 
 @view('content.html')
 @get('/tag/:tag_id')
@@ -81,7 +93,7 @@ def tag_blogs(tag_id):
 @view('content.html')
 @get('/members')
 def members():
-    tag = Tag.get("0014492489683911edee3f3727244eab87c990dd5926a75000")
+    tag = Tag.get("0014492489683609f9351c69eaa4c9c8bf725b25e155ded000")
     if not tag:
         raise notfound()
     blogs = get_blogs_from_tag(tag)
@@ -89,6 +101,17 @@ def members():
     user = ctx.request.user
     return dict(blogs=blogs,user=user)
 
+@view('content.html')
+@get('/researchs')
+def members():
+    tag = Tag.get("001449249434796934306a1e38243e8b4fde9e013d286fe000")
+    if not tag:
+        raise notfound()
+    blogs = get_blogs_from_tag(tag)
+    blogs = render_blogs(blogs)
+    user = ctx.request.user
+    return dict(blogs=blogs,user=user)
+	
 @view('signin.html')
 @get('/signin')
 def signin():
