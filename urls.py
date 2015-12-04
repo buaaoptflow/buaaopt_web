@@ -60,7 +60,7 @@ def render_blogs(blogs):
 @view('content.html')
 @get('/')
 def init_web():
-    tag = Tag.get("0014492489683609f9351c69eaa4c9c8bf725b25e155ded000")
+    tag = Tag.get("001449249583583e39048657a1c4584960f34e4623e2dae000")
     if not tag:
         raise notfound()
     blogs = get_blogs_from_tag(tag)
@@ -93,7 +93,7 @@ def tag_blogs(tag_id):
 @view('content.html')
 @get('/members')
 def members():
-    tag = Tag.get("0014492489683609f9351c69eaa4c9c8bf725b25e155ded000")
+    tag = Tag.get("001449249583583e39048657a1c4584960f34e4623e2dae000")
     if not tag:
         raise notfound()
     blogs = get_blogs_from_tag(tag)
@@ -103,7 +103,7 @@ def members():
 
 @view('content.html')
 @get('/researchs')
-def members():
+def research():
     tag = Tag.get("001449249434796934306a1e38243e8b4fde9e013d286fe000")
     if not tag:
         raise notfound()
