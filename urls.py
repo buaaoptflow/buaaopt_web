@@ -79,8 +79,8 @@ def tag_blogs(tag_id):
     return dict(blogs=blogs,user=user)
 	
 @view('content.html')
-@get('/member')
-def tag_blogs(tag_id):
+@get('/members')
+def members():
     tag = Tag.get("0014492489683911edee3f3727244eab87c990dd5926a75000")
     if not tag:
         raise notfound()
