@@ -11,7 +11,7 @@ configs = {
     },
     'review':{
         'domain':'buaaopt.sinaapp.com',
-        'url':'http://v2.uyan.cc/code/uyan.js?uid=2029306'
+        'url':'http://v2.uyan.cc/code/uyan.js?uid=2074510'
         },
     'storage':{
         'bucket':'buaaopt'
