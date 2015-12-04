@@ -59,7 +59,7 @@ def render_blogs(blogs):
 
 @view('content.html')
 @get('/')
-def begin():
+def init_web():
     tag = Tag.get("0014492489683609f9351c69eaa4c9c8bf725b25e155ded000")
     if not tag:
         raise notfound()
